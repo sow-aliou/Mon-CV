@@ -26,6 +26,24 @@ import {
   hobbies,
 } from './data/cvData'
 
+function renderContactLabel(item) {
+  const label = typeof item === 'string' ? item : item.label
+  const href = typeof item === 'string' ? undefined : item.href
+
+  if (!href) return label
+
+  const isExternal = href.startsWith('http')
+  return (
+    <a
+      href={href}
+      className="contact-link"
+      {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+    >
+      {label}
+    </a>
+  )
+}
+
 function App() {
   const contactItems = leftColumnSections.find(s => s.title === 'CONTACT')?.items || [];
   const languesItems = leftColumnSections.find(s => s.title === 'LANGUES')?.items || [];
@@ -52,7 +70,7 @@ function App() {
                 return (
                   <span key={index} className="contact-item">
                     <Icon className="contact-icon" />
-                    {item}
+                    {renderContactLabel(item)}
                     {index < row1.length - 1 && <span className="contact-dot">•</span>}
                   </span>
                 );
@@ -65,7 +83,7 @@ function App() {
                   return (
                     <span key={index} className="contact-item">
                       <Icon className="contact-icon" />
-                      {item}
+                      {renderContactLabel(item)}
                       {index < row2.length - 1 && <span className="contact-dot">•</span>}
                     </span>
                   );

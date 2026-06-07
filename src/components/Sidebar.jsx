@@ -11,14 +11,37 @@ import {
   FaLanguage,
 } from 'react-icons/fa'
 
+function getContactLabel(item) {
+  return typeof item === 'string' ? item : item.label
+}
+
 function getSectionIcon(sectionTitle, item) {
   if (sectionTitle === 'CONTACT') {
-    if (item.includes('@')) return <FaEnvelope className="item-icon" aria-hidden="true" />
-    if (item.includes('github')) return <FaGithub className="item-icon" aria-hidden="true" />
-    if (item.includes('linkedin')) return <FaLinkedin className="item-icon" aria-hidden="true" />
+    const label = getContactLabel(item)
+    if (label.includes('@')) return <FaEnvelope className="item-icon" aria-hidden="true" />
+    if (label.includes('github')) return <FaGithub className="item-icon" aria-hidden="true" />
+    if (label.includes('linkedin')) return <FaLinkedin className="item-icon" aria-hidden="true" />
     return <FaMapMarkerAlt className="item-icon" aria-hidden="true" />
   }
   return null
+}
+
+function renderContactItem(item) {
+  const label = getContactLabel(item)
+  const href = typeof item === 'string' ? undefined : item.href
+
+  if (!href) return <span>{label}</span>
+
+  const isExternal = href.startsWith('http')
+  return (
+    <a
+      href={href}
+      className="contact-link"
+      {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+    >
+      {label}
+    </a>
+  )
 }
 
 function getGeneralInfoIcon(item) {
@@ -49,9 +72,9 @@ function Sidebar({ profile, leftColumnSections, hardSkills, generalInfo }) {
           </h3>
           <ul className="left-list">
             {section.items.map((item) => (
-              <li key={item}>
+              <li key={getContactLabel(item)}>
                 {getSectionIcon(section.title, item)}
-                <span>{item}</span>
+                {renderContactItem(item)}
               </li>
             ))}
           </ul>
