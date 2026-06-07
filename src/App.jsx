@@ -1,35 +1,192 @@
 import './App.css'
-import MainContent from './components/MainContent'
 import PrintButton from './components/PrintButton'
-import Sidebar from './components/Sidebar'
+import {
+  FaUser,
+  FaGraduationCap,
+  FaBriefcase,
+  FaCode,
+  FaTools,
+  FaLightbulb,
+  FaGlobe,
+  FaHeart,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaGithub,
+  FaLinkedin
+} from 'react-icons/fa'
 import {
   education,
-  generalInfo,
+  experience,
   hardSkills,
-  hobbies,
   leftColumnSections,
   majorProjects,
   profile,
   softSkills,
+  hobbies,
 } from './data/cvData'
 
 function App() {
+  const contactItems = leftColumnSections.find(s => s.title === 'CONTACT')?.items || [];
+  const languesItems = leftColumnSections.find(s => s.title === 'LANGUES')?.items || [];
+  
+  // Icons matching each contact item in order: Phone, Email, Address, GitHub, LinkedIn
+  const contactIcons = [FaPhone, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin];
+
+  // Arrange contacts: Phone, Email, Address on row 1; GitHub, LinkedIn on row 2
+  const row1 = contactItems.slice(0, 3);
+  const row2 = contactItems.slice(3);
+  const row1Icons = contactIcons.slice(0, 3);
+  const row2Icons = contactIcons.slice(3);
+
   return (
     <>
       <div className="cv-container">
-        <Sidebar
-          profile={profile}
-          leftColumnSections={leftColumnSections}
-          hardSkills={hardSkills}
-          generalInfo={generalInfo}
-        />
-        <MainContent
-          profile={profile}
-          majorProjects={majorProjects}
-          education={education}
-          softSkills={softSkills}
-          hobbies={hobbies}
-        />
+        <header className="cv-header">
+          <h1>{profile.name.toUpperCase()}</h1>
+          <div className="profile-title">{profile.title.toUpperCase()}</div>
+          <div className="contact-info">
+            <div className="contact-row">
+              {row1.map((item, index) => {
+                const Icon = row1Icons[index];
+                return (
+                  <span key={index} className="contact-item">
+                    <Icon className="contact-icon" />
+                    {item}
+                    {index < row1.length - 1 && <span className="contact-dot">•</span>}
+                  </span>
+                );
+              })}
+            </div>
+            {row2.length > 0 && (
+              <div className="contact-row">
+                {row2.map((item, index) => {
+                  const Icon = row2Icons[index];
+                  return (
+                    <span key={index} className="contact-item">
+                      <Icon className="contact-icon" />
+                      {item}
+                      {index < row2.length - 1 && <span className="contact-dot">•</span>}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </header>
+
+        <section className="cv-section">
+          <h2><FaUser className="section-icon" /> PROFIL</h2>
+          <p className="objective">{profile.summary}</p>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaGraduationCap className="section-icon" /> FORMATION</h2>
+          <div className="timeline">
+            {education.map((item, index) => {
+              const parts = item.school.split(' | ');
+              const schoolStr = parts[0];
+              const yearStr = parts.length > 1 ? parts[1] : '';
+              return (
+                <div key={index} className="timeline-item">
+                  <div className="timeline-dot"></div>
+                  <div className="timeline-content">
+                    <span className="timeline-year">{yearStr}</span>
+                    <strong className="timeline-degree">{item.degree}</strong>
+                    <span className="timeline-school">{schoolStr}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaBriefcase className="section-icon" /> EXPÉRIENCE PROFESSIONNELLE</h2>
+          <div className="experience-list">
+            {experience.map((item, index) => (
+              <div key={index} className="experience-card">
+                <div className="experience-header">
+                  <strong className="experience-title">{item.title}</strong>
+                  <span className="experience-period">{item.period}</span>
+                </div>
+                <div className="experience-company">
+                  <em>{item.company}</em>
+                </div>
+                <ul className="experience-description">
+                  {item.description.split('\n').map((bullet, i) => (
+                    bullet.trim() && <li key={i}>{bullet.trim()}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaCode className="section-icon" /> PROJETS</h2>
+          <div className="projects-list">
+            {majorProjects.map((item, index) => (
+              <div key={index} className="project-card">
+                <div className="project-header">
+                  <strong className="project-name">{item.name}</strong>
+                  <div className="project-tags">
+                    {item.tech.split(', ').map((t, i) => (
+                      <span key={i} className="tech-tag">{t}</span>
+                    ))}
+                  </div>
+                </div>
+                <p className="project-description">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaTools className="section-icon" /> COMPÉTENCES TECHNIQUES</h2>
+          <ul className="cv-bullets">
+            {hardSkills.map((skill, index) => (
+              <li key={index}>
+                <strong>{skill.category} : </strong>
+                {skill.tags.join(', ')}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaLightbulb className="section-icon" /> SOFT SKILLS</h2>
+          <ul className="soft-skills-grid">
+             {softSkills.map((skill, index) => (
+               <li key={index}>{skill}</li>
+             ))}
+          </ul>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaGlobe className="section-icon" /> LANGUES</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4px' }}>
+            {languesItems.map((langue, index) => {
+              const [lang, level] = langue.split(' : ');
+              return (
+                <div key={index} className="cv-item skill-item" style={{ display: 'flex', justifyContent: 'space-between', margin: 0 }}>
+                  <strong>{lang}</strong>
+                  <span style={{ fontWeight: 600, color: '#444' }}>{level}</span>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="cv-section">
+          <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
+          <ul className="cv-bullets">
+            {hobbies.map((hobby, index) => (
+              <li key={index}>{hobby}</li>
+            ))}
+          </ul>
+        </section>
+
       </div>
       <PrintButton />
     </>

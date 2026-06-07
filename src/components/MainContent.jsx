@@ -1,4 +1,4 @@
-import { FaBriefcase, FaCheck, FaCode, FaGraduationCap, FaHeart, FaLeaf, FaPlane, FaRunning, FaUser, FaUsers } from 'react-icons/fa'
+import { FaBriefcase, FaCheck, FaCode, FaGraduationCap, FaHeart, FaLeaf, FaPlane, FaRunning, FaUser, FaUsers, FaChalkboardTeacher } from 'react-icons/fa'
 
 function getHobbyIcon(hobby) {
   if (hobby.includes('Agriculture')) return <FaLeaf className="item-icon" aria-hidden="true" />
@@ -7,7 +7,7 @@ function getHobbyIcon(hobby) {
   return <FaRunning className="item-icon" aria-hidden="true" />
 }
 
-function MainContent({ profile, majorProjects, education, softSkills, hobbies }) {
+function MainContent({ profile, experience, majorProjects, education, softSkills, hobbies }) {
   return (
     <main className="main">
       <section className="main-section">
@@ -27,6 +27,21 @@ function MainContent({ profile, majorProjects, education, softSkills, hobbies })
           <article key={item.degree} className="edu-item">
             <h4 className="edu-title">{item.degree}</h4>
             <p className="edu-sub">{item.school}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="main-section">
+        <h3 className="main-title">
+          <FaChalkboardTeacher className="title-icon" aria-hidden="true" />
+          <span>EXPÉRIENCE PROFESSIONNELLE</span>
+        </h3>
+        {experience.map((item, index) => (
+          <article key={index} className="project">
+            <div className="project-head">
+              <h4 className="project-title">{item.title}</h4>
+            </div>
+            <p className="project-text">{item.description}</p>
           </article>
         ))}
       </section>

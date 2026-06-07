@@ -1,4 +1,3 @@
-import profileImage from '../profile.jpg'
 import {
   FaAddressBook,
   FaCarSide,
@@ -38,9 +37,6 @@ function Sidebar({ profile, leftColumnSections, hardSkills, generalInfo }) {
   return (
     <aside className="sidebar">
       <div className="profile">
-        <div className="photo">
-          <img src={profileImage} alt={profile.name} />
-        </div>
         <h1 className="name">{profile.name}</h1>
         <p className="title">{profile.title}</p>
       </div>
