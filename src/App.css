@@ -10,10 +10,12 @@ body {
   font-family: 'Inter', Arial, sans-serif;
   background: #525659;
   color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 .cv-container {
-  width: 210mm;
+  width: 100%;
+  max-width: 210mm;
   min-height: 297mm;
   background: #fff;
   margin: 20px auto;
@@ -51,17 +53,24 @@ body {
 }
 
 .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 8px;
   margin-bottom: 6px;
 }
 
 .contact-item {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
 }
 
 .contact-link {
   color: inherit;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .contact-link:hover {
@@ -219,16 +228,23 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin-bottom: 4px;
 }
 
 .experience-title {
+  flex: 1;
+  min-width: 0;
   font-size: 12pt;
   font-weight: 800;
   color: #111827;
 }
 
 .experience-period {
+  flex-shrink: 0;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
   font-weight: 700;
   font-size: 10.5pt;
   color: #10b981;
@@ -297,15 +313,16 @@ body {
 
 .project-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px 10px;
   margin-bottom: 6px;
 }
 
 .project-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  flex-shrink: 0;
 }
 
 .tech-tag {
@@ -382,6 +399,26 @@ body {
   top: 2px;
 }
 
+.languages-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.language-level {
+  font-weight: 600;
+  color: #444;
+  flex-shrink: 0;
+}
+
 .print-btn {
   position: fixed;
   bottom: 30px;
@@ -400,6 +437,169 @@ body {
   color: #fff;
   font-size: 0.95rem;
   margin-right: 8px;
+}
+
+@media (max-width: 900px) {
+  .cv-container {
+    margin: 12px auto;
+    padding: 36px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    margin: 8px auto;
+    padding: 28px 24px;
+    font-size: 11pt;
+    line-height: 1.55;
+    min-height: auto;
+  }
+
+  .cv-header h1 {
+    font-size: 22pt;
+    letter-spacing: 1px;
+  }
+
+  .profile-title {
+    font-size: 11pt;
+    letter-spacing: 1px;
+  }
+
+  .contact-info {
+    font-size: 10pt;
+  }
+
+  .cv-section h2 {
+    font-size: 12pt;
+  }
+
+  .experience-period {
+    font-size: 10pt;
+  }
+
+  .project-name {
+    font-size: 11pt;
+  }
+
+  .skills-grid,
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background: #fff;
+  }
+
+  .cv-container {
+    margin: 0;
+    padding: 24px 18px;
+    box-shadow: none;
+    font-size: 10.5pt;
+  }
+
+  .cv-header {
+    margin-bottom: 20px;
+  }
+
+  .cv-header h1 {
+    font-size: 19pt;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+  }
+
+  .profile-title {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .contact-dot {
+    margin: 0 6px;
+  }
+
+  .cv-section {
+    margin-bottom: 18px;
+  }
+
+  .cv-section h2 {
+    font-size: 11pt;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .timeline {
+    padding-left: 18px;
+  }
+
+  .timeline-dot {
+    left: -18px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .objective {
+    font-size: 10.5pt;
+    text-align: left;
+  }
+
+  .experience-card,
+  .project-card {
+    padding: 10px 12px;
+  }
+
+  .experience-title,
+  .project-name {
+    font-size: 10.5pt;
+  }
+
+  .tech-tag {
+    font-size: 8pt;
+    white-space: normal;
+  }
+
+  .print-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cv-container {
+    padding: 20px 14px;
+    font-size: 10pt;
+  }
+
+  .cv-header h1 {
+    font-size: 17pt;
+  }
+
+  .profile-title {
+    font-size: 9pt;
+  }
+
+  .contact-info {
+    font-size: 9pt;
+  }
+
+  .contact-dot {
+    margin: 0 4px;
+  }
+
+  .print-btn {
+    padding: 14px;
+    border-radius: 50%;
+  }
+
+  .print-btn .btn-icon {
+    margin-right: 0;
+  }
+
+  .print-btn span {
+    display: none;
+  }
 }
 
 @media print {

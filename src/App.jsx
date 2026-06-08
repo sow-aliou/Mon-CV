@@ -183,13 +183,13 @@ function App() {
 
         <section className="cv-section">
           <h2><FaGlobe className="section-icon" /> LANGUES</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4px' }}>
+          <div className="languages-list">
             {languesItems.map((langue, index) => {
               const [lang, level] = langue.split(' : ');
               return (
-                <div key={index} className="cv-item skill-item" style={{ display: 'flex', justifyContent: 'space-between', margin: 0 }}>
+                <div key={index} className="cv-item skill-item language-item">
                   <strong>{lang}</strong>
-                  <span style={{ fontWeight: 600, color: '#444' }}>{level}</span>
+                  <span className="language-level">{level}</span>
                 </div>
               );
             })}
