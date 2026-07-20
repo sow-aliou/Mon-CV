@@ -1,4 +1,4 @@
-import { FaPrint } from 'react-icons/fa'
+import { FaPrint } from './Icons'
 
 function PrintButton() {
   return (

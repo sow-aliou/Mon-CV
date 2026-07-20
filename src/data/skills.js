@@ -1,7 +1,9 @@
 export const hardSkills = [
   { category: 'Langages de programmation', tags: ['JavaScript', 'PHP', 'Python', 'Java', 'C', 'Dart'] },
-  { category: 'Frameworks', tags: ['React', 'Node.js', 'Laravel', 'Spring Boot', 'Flutter'] },
-  { category: 'Outils', tags: ['Git', 'GitHub', 'Docker'] },
+  { category: 'Frameworks & Librairies', tags: ['React', 'Node.js', 'Laravel', 'Spring Boot', 'Flutter', 'Tailwind CSS'] },
+  { category: 'Tests & Qualité Logicielle', tags: ['JUnit', 'PHPUnit', 'Tests Unitaires', "Tests d'Intégration"] },
+  { category: 'Outils', tags: ['Git', 'GitHub', 'GitLab', 'Docker', 'Jira'] },
+  { category: 'Conception', tags: ['UML', 'Merise', 'Figma'] },
   { category: 'Bases de données', tags: ['MySQL', 'Oracle', 'Sqlite'] },
 ]
 

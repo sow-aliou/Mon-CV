@@ -1,20 +1,20 @@
 export const majorProjects = [
   {
     name: 'Gestion Scolaire École Primaire',
-    tech: 'Laravel, React, MySQL',
+    tech: 'Laravel, React, MySQL, Tailwind CSS',
     description:
-      "Développement d'une application web qui gère le parcours de l'élève, de l'inscription jusqu'à la génération automatique des bulletins.",
+      "Plateforme web complète d'automatisation de la gestion administrative et pédagogique scolaire : suivi du parcours complet de l'élève (inscriptions/réinscriptions), calcul automatique des moyennes trimestrielles selon les règles officielles et génération instantanée des bulletins de notes au format PDF.",
+  },
+  {
+    name: 'SafeCode-Exam',
+    tech: 'React, Express.js, Electron, SQLite, Monaco Editor',
+    description:
+      "Plateforme d'évaluation et d'examen en ligne sécurisée (environnement web et desktop kiosque verrouillé) : création d'épreuves numériques, éditeur de code Monaco intégré avec coloration syntaxique, minuterie en temps réel, sauvegarde automatique des réponses et export des résultats.",
   },
   {
     name: 'Simulateur de Trafic Urbain',
-    tech: 'Python, Turtle, Sqlite',
+    tech: 'Python, Turtle, SQLite, POO',
     description:
-      "Conception d'un système intelligent de gestion d'intersection avec feux tricolores et flux de véhicules.",
-  },
-  {
-    name: 'QuickTicket',
-    tech: 'Laravel, React, MySQL',
-    description:
-      "Application web de réservation de tickets pour les événements (concerts, spectacles).",
+      "Système de simulation visuelle et algorithmique de carrefour routier complexe : modélisation dynamique du flux de véhicules, feux tricolores intelligents adaptatifs pour fluidifier la circulation et enregistrement des statistiques de trafic en base SQLite.",
   },
 ]

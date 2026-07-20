@@ -400,23 +400,21 @@ body {
 }
 
 .languages-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .language-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 140px 1fr;
   align-items: center;
-  gap: 12px;
   margin: 0;
 }
 
 .language-level {
   font-weight: 600;
   color: #444;
-  flex-shrink: 0;
 }
 
 .print-btn {

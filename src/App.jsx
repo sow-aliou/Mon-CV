@@ -4,17 +4,17 @@ import {
   FaUser,
   FaGraduationCap,
   FaBriefcase,
-  FaCode,
-  FaTools,
-  FaLightbulb,
-  FaGlobe,
+  FaRocket,
+  FaLayerGroup,
+  FaUsers,
+  FaLanguage,
   FaHeart,
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
   FaGithub,
   FaLinkedin
-} from 'react-icons/fa'
+} from './components/Icons'
 import {
   education,
   experience,
@@ -142,7 +142,7 @@ function App() {
         </section>
 
         <section className="cv-section">
-          <h2><FaCode className="section-icon" /> PROJETS</h2>
+          <h2><FaRocket className="section-icon" /> PROJETS</h2>
           <div className="projects-list">
             {majorProjects.map((item, index) => (
               <div key={index} className="project-card">
@@ -161,7 +161,7 @@ function App() {
         </section>
 
         <section className="cv-section">
-          <h2><FaTools className="section-icon" /> COMPÉTENCES TECHNIQUES</h2>
+          <h2><FaLayerGroup className="section-icon" /> COMPÉTENCES TECHNIQUES</h2>
           <ul className="cv-bullets">
             {hardSkills.map((skill, index) => (
               <li key={index}>
@@ -173,7 +173,7 @@ function App() {
         </section>
 
         <section className="cv-section">
-          <h2><FaLightbulb className="section-icon" /> SOFT SKILLS</h2>
+          <h2><FaUsers className="section-icon" /> SOFT SKILLS</h2>
           <ul className="soft-skills-grid">
              {softSkills.map((skill, index) => (
                <li key={index}>{skill}</li>
@@ -182,7 +182,7 @@ function App() {
         </section>
 
         <section className="cv-section">
-          <h2><FaGlobe className="section-icon" /> LANGUES</h2>
+          <h2><FaLanguage className="section-icon" /> LANGUES</h2>
           <div className="languages-list">
             {languesItems.map((langue, index) => {
               const [lang, level] = langue.split(' : ');
