@@ -3,7 +3,7 @@ import { FaBriefcase, FaCheck, FaCode, FaGraduationCap, FaHeart, FaLeaf, FaPlane
 function getHobbyIcon(hobby) {
   if (hobby.includes('Agriculture')) return <FaLeaf className="item-icon" aria-hidden="true" />
   if (hobby.includes('Voyage')) return <FaPlane className="item-icon" aria-hidden="true" />
-  if (hobby.includes('Programmation')) return <FaCode className="item-icon" aria-hidden="true" />
+  if (hobby.includes('Programmation') || hobby.includes('Hackathon') || hobby.includes('Hackatton')) return <FaCode className="item-icon" aria-hidden="true" />
   return <FaRunning className="item-icon" aria-hidden="true" />
 }
 

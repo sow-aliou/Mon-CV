@@ -154,7 +154,11 @@ function App() {
                     ))}
                   </div>
                 </div>
-                <p className="project-description">{item.description}</p>
+                <ul className="project-description-list">
+                  {item.description.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -162,7 +166,7 @@ function App() {
 
         <section className="cv-section">
           <h2><FaLayerGroup className="section-icon" /> COMPÉTENCES TECHNIQUES</h2>
-          <ul className="cv-bullets">
+          <ul className="cv-no-bullet">
             {hardSkills.map((skill, index) => (
               <li key={index}>
                 <strong>{skill.category} : </strong>
@@ -198,7 +202,7 @@ function App() {
 
         <section className="cv-section">
           <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
-          <ul className="cv-bullets">
+          <ul className="cv-no-bullet">
             {hobbies.map((hobby, index) => (
               <li key={index}>{hobby}</li>
             ))}

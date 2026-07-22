@@ -269,12 +269,12 @@ body {
 }
 
 .experience-description li::before {
-  content: "■";
+  content: "●";
   color: #10b981;
   position: absolute;
   left: -18px;
-  font-size: 8pt;
-  top: 2px;
+  font-size: 9pt;
+  top: 1.5px;
 }
 
 .cv-bullets {
@@ -296,6 +296,17 @@ body {
   left: -18px;
   font-size: 8pt;
   top: 2px;
+}
+
+.cv-no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 11pt;
+  color: #111827;
+}
+
+.cv-no-bullet li {
+  margin-bottom: 4px;
 }
 
 .projects-list {
@@ -343,10 +354,27 @@ body {
   font-weight: 800;
 }
 
-.project-description {
+.project-description-list {
+  list-style-type: none;
+  padding-left: 18px;
   font-size: 11pt;
   color: #4b5563;
-  line-height: 1.5;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.project-description-list li {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.project-description-list li::before {
+  content: "●";
+  color: #10b981;
+  position: absolute;
+  left: -18px;
+  font-size: 9pt;
+  top: 1.5px;
 }
 
 .skills-grid {
@@ -391,12 +419,12 @@ body {
 }
 
 .soft-skills-grid li::before {
-  content: "■";
+  content: "●";
   color: #10b981;
   position: absolute;
   left: -18px;
-  font-size: 8pt;
-  top: 2px;
+  font-size: 9pt;
+  top: 1.5px;
 }
 
 .languages-list {
