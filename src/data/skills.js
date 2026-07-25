@@ -1,5 +1,5 @@
 export const hardSkills = [
-  { category: 'Langages de programmation', tags: ['JavaScript', 'PHP', 'Python', 'Java', 'C', 'Dart'] },
+  { category: 'Langages de programmation', tags: ['TypeScript', 'JavaScript', 'PHP', 'Python', 'Java', 'C', 'Dart'] },
   { category: 'Frameworks & Librairies', tags: ['React', 'Node.js', 'Laravel', 'Spring Boot', 'Flutter', 'Tailwind CSS'] },
   { category: 'Tests & Qualité Logicielle', tags: ['JUnit', 'PHPUnit', 'Tests Unitaires', "Tests d'Intégration"] },
   { category: 'Outils', tags: ['Git', 'GitHub', 'GitLab', 'Docker', 'Jira'] },
