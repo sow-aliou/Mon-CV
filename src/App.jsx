@@ -185,29 +185,31 @@ function App() {
           </ul>
         </section>
 
-        <section className="cv-section">
-          <h2><FaLanguage className="section-icon" /> LANGUES</h2>
-          <div className="languages-list">
-            {languesItems.map((langue, index) => {
-              const [lang, level] = langue.split(' : ');
-              return (
-                <div key={index} className="cv-item skill-item language-item">
-                  <strong>{lang}</strong>
-                  <span className="language-level">{level}</span>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        <div className="cv-section-row">
+          <section className="cv-section">
+            <h2><FaLanguage className="section-icon" /> LANGUES</h2>
+            <div className="languages-list">
+              {languesItems.map((langue, index) => {
+                const [lang, level] = langue.split(' : ');
+                return (
+                  <div key={index} className="cv-item skill-item language-item">
+                    <strong>{lang}</strong>
+                    <span className="language-level">{level}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
 
-        <section className="cv-section">
-          <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
-          <ul className="cv-no-bullet">
-            {hobbies.map((hobby, index) => (
-              <li key={index}>{hobby}</li>
-            ))}
-          </ul>
-        </section>
+          <section className="cv-section">
+            <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
+            <ul className="cv-no-bullet">
+              {hobbies.map((hobby, index) => (
+                <li key={index}>{hobby}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
 
       </div>
       <PrintButton />

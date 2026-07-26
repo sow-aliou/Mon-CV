@@ -93,6 +93,17 @@ body {
   margin-bottom: 22px;
 }
 
+.cv-section-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 22px;
+}
+
+.cv-section-row .cv-section {
+  margin-bottom: 0;
+}
+
 .cv-section h2 {
   display: flex;
   align-items: center;
