@@ -14,9 +14,7 @@ export const leftColumnSections = [
     items: [
       'Français : C1',
       'Anglais : B2',
-      'Arabe : B2',
-      'Peulh : Maternelle',
-      'Wolof : Quotidien'
+      'Arabe : B2'
     ],
   },
 ]
