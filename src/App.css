@@ -19,32 +19,32 @@ body {
   min-height: 297mm;
   background: #fff;
   margin: 20px auto;
-  padding: 50px 60px;
+  padding: 30px 45px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  font-size: 12pt;
-  line-height: 1.6;
+  font-size: 10pt;
+  line-height: 1.45;
   text-align: left;
 }
 
 .cv-header {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .cv-header h1 {
-  font-size: 28pt;
+  font-size: 20pt;
   font-weight: 800;
   letter-spacing: 2px;
   color: #111827;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .profile-title {
-  font-size: 13pt;
+  font-size: 11pt;
   font-weight: 700;
   color: #111827; /* Dark black/gray */
   letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .contact-info {
@@ -90,14 +90,14 @@ body {
 }
 
 .cv-section {
-  margin-bottom: 22px;
+  margin-bottom: 13px;
 }
 
 .cv-section-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-bottom: 22px;
+  margin-bottom: 13px;
 }
 
 .cv-section-row .cv-section {
@@ -108,13 +108,13 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13.5pt;
+  font-size: 11.5pt;
   font-weight: 800;
   color: #222;
   text-transform: uppercase;
   border-bottom: 2px solid #222;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
 }
 
 .cv-section > *:not(h2) {
@@ -143,7 +143,7 @@ body {
 
 .timeline-item {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .timeline-item:last-child {
@@ -154,8 +154,8 @@ body {
   position: absolute;
   left: -22px;
   top: 5px;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #10b981;
   border: 2px solid #fff;
@@ -165,43 +165,50 @@ body {
 .timeline-content {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+}
+
+.timeline-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
 }
 
 .timeline-year {
-  font-size: 9.5pt;
+  font-size: 9pt;
   font-weight: 700;
   color: #10b981;
   letter-spacing: 0.3px;
 }
 
 .timeline-degree {
-  font-size: 12pt;
+  font-size: 10.5pt;
   font-weight: 800;
   color: #222;
 }
 
 .timeline-school {
-  font-size: 11pt;
+  font-size: 9.5pt;
   color: #555;
 }
 
 .objective {
   font-style: italic;
-  font-size: 11.5pt;
+  font-size: 9.5pt;
   color: #444;
   text-align: justify;
 }
 
 .cv-item {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .cv-item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12pt;
+  font-size: 10.5pt;
   margin-bottom: 3px;
 }
 
@@ -212,26 +219,26 @@ body {
 
 .cv-item-header span {
   font-weight: 700;
-  font-size: 10.5pt;
+  font-size: 9.5pt;
   color: #444;
 }
 
 .cv-item-sub {
-  font-size: 11.5pt;
+  font-size: 9.5pt;
   color: #555;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .experience-card {
   border-left: 3px solid #10b981;
   background: #f9fafb;
-  padding: 10px 14px;
+  padding: 6px 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -240,13 +247,13 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .experience-title {
   flex: 1;
   min-width: 0;
-  font-size: 12pt;
+  font-size: 10.5pt;
   font-weight: 800;
   color: #111827;
 }
@@ -257,26 +264,26 @@ body {
   text-align: right;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 10.5pt;
+  font-size: 9.5pt;
   color: #10b981;
 }
 
 .experience-company {
-  font-size: 11.5pt;
+  font-size: 9.5pt;
   color: #555;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .experience-description {
   list-style-type: none;
   padding-left: 18px;
-  font-size: 11pt;
+  font-size: 10pt;
   color: #111827;
 }
 
 .experience-description li {
   position: relative;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .experience-description li::before {
@@ -323,13 +330,13 @@ body {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .project-card {
   border-left: 3px solid #111827;
   background: #f9fafb;
-  padding: 10px 14px;
+  padding: 6px 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -337,30 +344,30 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 10px;
-  margin-bottom: 6px;
+  gap: 6px 8px;
+  margin-bottom: 3px;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
 }
 
 .tech-tag {
   display: inline-block;
   background: #e5e7eb;
   color: #1f2937;
-  font-size: 8.5pt;
+  font-size: 7.5pt;
   font-weight: 600;
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: 3px;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .project-name {
-  font-size: 12pt;
+  font-size: 10.5pt;
   color: #111827;
   font-weight: 800;
 }
@@ -368,15 +375,15 @@ body {
 .project-description-list {
   list-style-type: none;
   padding-left: 18px;
-  font-size: 11pt;
+  font-size: 10pt;
   color: #4b5563;
-  margin-top: 6px;
+  margin-top: 3px;
   line-height: 1.4;
 }
 
 .project-description-list li {
   position: relative;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .project-description-list li::before {
@@ -653,9 +660,14 @@ body {
     width: 210mm;
     min-height: 297mm;
     margin: 0;
-    padding: 20mm;
+    padding: 10mm 15mm;
     box-shadow: none;
     border: none;
+    font-size: 9.5pt !important;
+    line-height: 1.35 !important;
+  }
+  .cv-section {
+    margin-bottom: 10px !important;
   }
   .print-btn {
     display: none;

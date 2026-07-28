@@ -109,8 +109,10 @@ function App() {
                 <div key={index} className="timeline-item">
                   <div className="timeline-dot"></div>
                   <div className="timeline-content">
-                    <span className="timeline-year">{yearStr}</span>
-                    <strong className="timeline-degree">{item.degree}</strong>
+                    <div className="timeline-header-row">
+                      <strong className="timeline-degree">{item.degree}</strong>
+                      <span className="timeline-year">{yearStr}</span>
+                    </div>
                     <span className="timeline-school">{schoolStr}</span>
                   </div>
                 </div>
