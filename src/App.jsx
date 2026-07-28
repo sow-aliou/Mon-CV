@@ -92,125 +92,129 @@ function App() {
             )}
           </div>
         </header>
-
-        <section className="cv-section">
-          <h2><FaUser className="section-icon" /> PROFIL</h2>
-          <p className="objective">{profile.summary}</p>
-        </section>
-
-        <section className="cv-section">
-          <h2><FaGraduationCap className="section-icon" /> FORMATION</h2>
-          <div className="timeline">
-            {education.map((item, index) => {
-              const parts = item.school.split(' | ');
-              const schoolStr = parts[0];
-              const yearStr = parts.length > 1 ? parts[1] : '';
-              return (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-content">
-                    <span className="timeline-year">{yearStr}</span>
-                    <strong className="timeline-degree">{item.degree}</strong>
-                    <span className="timeline-school">{schoolStr}</span>
+        <div className="cv-body-layout">
+          {/* Left Column (Sidebar) */}
+          <aside className="cv-left-column">
+            <section className="cv-section">
+              <h2><FaLayerGroup className="section-icon" /> COMPÉTENCES</h2>
+              <div className="sidebar-skills">
+                {hardSkills.map((skill, index) => (
+                  <div key={index} className="sidebar-skill-item">
+                    <strong>{skill.category}</strong>
+                    <p>{skill.tags.join(', ')}</p>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="cv-section">
-          <h2><FaBriefcase className="section-icon" /> EXPÉRIENCE PROFESSIONNELLE</h2>
-          <div className="experience-list">
-            {experience.map((item, index) => (
-              <div key={index} className="experience-card">
-                <div className="experience-header">
-                  <strong className="experience-title">{item.title}</strong>
-                  <span className="experience-period">{item.period}</span>
-                </div>
-                <div className="experience-company">
-                  <em>{item.company}</em>
-                </div>
-                <ul className="experience-description">
-                  {item.description.split('\n').map((bullet, i) => (
-                    bullet.trim() && <li key={i}>{bullet.trim()}</li>
-                  ))}
-                </ul>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
 
-        <section className="cv-section">
-          <h2><FaRocket className="section-icon" /> PROJETS</h2>
-          <div className="projects-list">
-            {majorProjects.map((item, index) => (
-              <div key={index} className="project-card">
-                <div className="project-header">
-                  <strong className="project-name">{item.name}</strong>
-                  <div className="project-tags">
-                    {item.tech.split(', ').map((t, i) => (
-                      <span key={i} className="tech-tag">{t}</span>
-                    ))}
-                  </div>
-                </div>
-                <ul className="project-description-list">
-                  {item.description.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
+            <section className="cv-section">
+              <h2><FaUsers className="section-icon" /> SOFT SKILLS</h2>
+              <ul className="sidebar-list">
+                {softSkills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="cv-section">
+              <h2><FaLanguage className="section-icon" /> LANGUES</h2>
+              <div className="sidebar-languages">
+                {languesItems.map((langue, index) => {
+                  const [lang, level] = langue.split(' : ');
+                  return (
+                    <div key={index} className="sidebar-lang-item">
+                      <strong>{lang}</strong>
+                      <span>{level}</span>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
 
-        <section className="cv-section">
-          <h2><FaLayerGroup className="section-icon" /> COMPÉTENCES TECHNIQUES</h2>
-          <ul className="cv-no-bullet">
-            {hardSkills.map((skill, index) => (
-              <li key={index}>
-                <strong>{skill.category} : </strong>
-                {skill.tags.join(', ')}
-              </li>
-            ))}
-          </ul>
-        </section>
+            <section className="cv-section">
+              <h2><FaHeart className="section-icon" /> INTÉRÊTS</h2>
+              <ul className="sidebar-list">
+                {hobbies.map((hobby, index) => (
+                  <li key={index}>{hobby}</li>
+                ))}
+              </ul>
+            </section>
+          </aside>
 
-        <section className="cv-section">
-          <h2><FaUsers className="section-icon" /> SOFT SKILLS</h2>
-          <ul className="soft-skills-grid">
-             {softSkills.map((skill, index) => (
-               <li key={index}>{skill}</li>
-             ))}
-          </ul>
-        </section>
+          {/* Right Column (Main Content) */}
+          <main className="cv-right-column">
+            <section className="cv-section">
+              <h2><FaUser className="section-icon" /> PROFIL</h2>
+              <p className="objective">{profile.summary}</p>
+            </section>
 
-        <div className="cv-section-row">
-          <section className="cv-section">
-            <h2><FaLanguage className="section-icon" /> LANGUES</h2>
-            <div className="languages-list">
-              {languesItems.map((langue, index) => {
-                const [lang, level] = langue.split(' : ');
-                return (
-                  <div key={index} className="cv-item skill-item language-item">
-                    <strong>{lang}</strong>
-                    <span className="language-level">{level}</span>
+            <section className="cv-section">
+              <h2><FaGraduationCap className="section-icon" /> FORMATION</h2>
+              <div className="timeline">
+                {education.map((item, index) => {
+                  const parts = item.school.split(' | ');
+                  const schoolStr = parts[0];
+                  const yearStr = parts.length > 1 ? parts[1] : '';
+                  return (
+                    <div key={index} className="timeline-item">
+                      <div className="timeline-dot"></div>
+                      <div className="timeline-content">
+                        <span className="timeline-year">{yearStr}</span>
+                        <strong className="timeline-degree">{item.degree}</strong>
+                        <span className="timeline-school">{schoolStr}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            <section className="cv-section">
+              <h2><FaBriefcase className="section-icon" /> EXPÉRIENCE PROFESSIONNELLE</h2>
+              <div className="experience-list">
+                {experience.map((item, index) => (
+                  <div key={index} className="experience-card">
+                    <div className="experience-header">
+                      <strong className="experience-title">{item.title}</strong>
+                      <span className="experience-period">{item.period}</span>
+                    </div>
+                    <div className="experience-company">
+                      <em>{item.company}</em>
+                    </div>
+                    <ul className="experience-description">
+                      {item.description.split('\n').map((bullet, i) => (
+                        bullet.trim() && <li key={i}>{bullet.trim()}</li>
+                      ))}
+                    </ul>
                   </div>
-                );
-              })}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
 
-          <section className="cv-section">
-            <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
-            <ul className="cv-no-bullet">
-              {hobbies.map((hobby, index) => (
-                <li key={index}>{hobby}</li>
-              ))}
-            </ul>
-          </section>
+            <section className="cv-section">
+              <h2><FaRocket className="section-icon" /> PROJETS</h2>
+              <div className="projects-list">
+                {majorProjects.map((item, index) => (
+                  <div key={index} className="project-card">
+                    <div className="project-header">
+                      <strong className="project-name">{item.name}</strong>
+                      <div className="project-tags">
+                        {item.tech.split(', ').map((t, i) => (
+                          <span key={i} className="tech-tag">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <ul className="project-description-list">
+                      {item.description.map((bullet, i) => (
+                        <li key={i}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
         </div>
-
       </div>
       <PrintButton />
     </>
