@@ -97,3 +97,10 @@ export const FaPrint = (props) => (
     <path d="M128 0C92.7 0 64 28.7 64 64v96h384V64c0-35.3-28.7-64-64-64H128zM32 192c-17.7 0-32 14.3-32 32v160c0 17.7 14.3 32 32 32h64v64c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32v-64h64c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32zm352 256H128V320h256v128z"/>
   </svg>
 );
+
+// Globe / Website (Portfolio)
+export const FaGlobe = (props) => (
+  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 496 512" height="1em" width="1em" {...props}>
+    <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 384c-75 0-136-61-136-136s61-136 136-136 136 61 136 136-61 136-136 136z"/>
+  </svg>
+);

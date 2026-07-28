@@ -7,6 +7,7 @@ export const leftColumnSections = [
       { label: 'Thiès, Sénégal' },
       { label: 'github.com/sow-aliou', href: 'https://github.com/sow-aliou' },
       { label: 'linkedin.com/in/aliou-sow-9a8a233a7', href: 'https://www.linkedin.com/in/aliou-sow-9a8a233a7' },
+      { label: 'portfolio-aliou-sow.vercel.app', href: 'https://portfolio-aliou-sow.vercel.app/' },
     ],
   },
   {

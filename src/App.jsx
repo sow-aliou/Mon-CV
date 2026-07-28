@@ -13,7 +13,8 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaGithub,
-  FaLinkedin
+  FaLinkedin,
+  FaGlobe
 } from './components/Icons'
 import {
   education,
@@ -48,10 +49,10 @@ function App() {
   const contactItems = leftColumnSections.find(s => s.title === 'CONTACT')?.items || [];
   const languesItems = leftColumnSections.find(s => s.title === 'LANGUES')?.items || [];
   
-  // Icons matching each contact item in order: Phone, Email, Address, GitHub, LinkedIn
-  const contactIcons = [FaPhone, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin];
+  // Icons matching each contact item in order: Phone, Email, Address, GitHub, LinkedIn, Portfolio
+  const contactIcons = [FaPhone, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaGlobe];
 
-  // Arrange contacts: Phone, Email, Address on row 1; GitHub, LinkedIn on row 2
+  // Arrange contacts: Phone, Email, Address on row 1; GitHub, LinkedIn, Portfolio on row 2
   const row1 = contactItems.slice(0, 3);
   const row2 = contactItems.slice(3);
   const row1Icons = contactIcons.slice(0, 3);
@@ -178,16 +179,16 @@ function App() {
           </ul>
         </section>
 
-        <section className="cv-section">
-          <h2><FaUsers className="section-icon" /> SOFT SKILLS</h2>
-          <ul className="soft-skills-grid">
-             {softSkills.map((skill, index) => (
-               <li key={index}>{skill}</li>
-             ))}
-          </ul>
-        </section>
+        <div className="cv-footer-row">
+          <section className="cv-section">
+            <h2><FaUsers className="section-icon" /> SOFT SKILLS</h2>
+            <ul className="cv-circle-bullets">
+               {softSkills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+               ))}
+            </ul>
+          </section>
 
-        <div className="cv-section-row">
           <section className="cv-section">
             <h2><FaLanguage className="section-icon" /> LANGUES</h2>
             <div className="languages-list">
@@ -205,7 +206,7 @@ function App() {
 
           <section className="cv-section">
             <h2><FaHeart className="section-icon" /> CENTRES D'INTÉRÊT</h2>
-            <ul className="cv-no-bullet">
+            <ul className="cv-circle-bullets">
               {hobbies.map((hobby, index) => (
                 <li key={index}>{hobby}</li>
               ))}
