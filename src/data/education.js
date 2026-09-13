@@ -5,6 +5,6 @@ export const education = [
   },
   {
     degree: 'Baccalauréat Série STIDD',
-    school: 'Lycée Technique André Peytavin de Saint-Louis | 2021 - 2022',
+    school: 'Lycée Technique André Peytavin de Saint-Louis | 2019 - 2022',
   },
 ]
