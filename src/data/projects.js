@@ -17,4 +17,13 @@ export const majorProjects = [
       "Minuterie temps réel, sauvegarde automatique continue et espace enseignant de correction (PDF/JSON)."
     ],
   },
+  {
+    name: 'QuickTicket',
+    tech: 'Laravel, React, MySQL, Tailwind CSS, QR Code API',
+    description: [
+      "Plateforme e-commerce de réservation de tickets d'événements (concerts, spectacles, conférences).",
+      "Génération de QR code unique par billet pour une validation rapide à l'entrée.",
+      "Gestion en temps réel des jauges et stocks de billets par les organisateurs."
+    ],
+  },
 ]
